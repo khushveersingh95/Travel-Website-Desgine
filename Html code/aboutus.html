@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Travel Website</title>
+  <style>
+    /* Reset some basic styles */
+    body, ul, li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    /* Navigation bar styling */
+    nav {
+        background: linear-gradient(90deg, #069baa, #51413b);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+      position: relative;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #ffdd57;
+    }
+
+    /* Underline animation */
+    nav ul li::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 50%;
+      background-color: #ffdd57;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+    }
+    nav ul li:hover::before {
+      visibility: visible;
+      width: 100%;
+      left: 0;
+    }
+
+    /* Slide-in animation */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    nav ul li {
+      animation: slideIn 0.5s ease forwards;
+    }
+    nav ul li:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    nav ul li:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    nav ul li:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+    nav ul li:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+    nav ul li:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+    nav ul li:nth-child(6) {
+      animation-delay: 0.6s;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-image: url('/Image/travel.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Overlay for better text visibility */
+    }
+    .hero-content {
+      max-width: 800px;
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* About Us Section */
+    .about-us {
+      padding: 50px;
+      text-align: center;
+      background: #fff;
+    }
+    .about-us h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    .about-us p {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Team Carousel */
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel-item {
+      min-width: 300px;
+      margin: 10px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+    }
+    .carousel-item h3 {
+      margin: 15px 0 10px;
+      font-size: 1.2rem;
+    }
+    .carousel-item p {
+      padding: 0 15px 15px;
+      color: #666;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      font-size: 1.5rem;
+      z-index: 2;
+    }
+    .carousel-button.prev {
+      left: 10px;
+    }
+    .carousel-button.next {
+      right: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    footer p {
+      margin: 0;
+    }
+
+    /* Responsive design for smaller screens */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: linear-gradient(90deg, #069baa, #51413b);
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+      .hero {
+        height: 40vh;
+      }
+      .carousel-item {
+        min-width: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="contactpage.html">Contact</a></li>
+      </ul>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>About Us</h1>
+      <p>Learn more about our journey and our team</p>
+    </div>
+  </section>
+
+  <section id="about" class="about-us">
+    <h2>Who We Are</h2>
+    <p>We are a passionate team of travel enthusiasts dedicated to bringing you the best travel experiences. Our mission is to make travel accessible, enjoyable, and unforgettable for everyone.</p>
+
+    <h2>Meet Our Team</h2>
+    <div class="carousel">
+      <button class="carousel-button prev">&#10094;</button>
+      <div class="carousel-track">
+        <div class="carousel-item">
+          <img src="https://thumbs.dreamstime.com/b/young-handsome-employee-office-153785920.jpg" alt="Team Member 1">
+          <h3>John Doe</h3>
+          <p>CEO & Founder</p>
+        </div>
+        <div class="carousel-item">
+          <img src="https://thumbs.dreamstime.com/b/businessman-drinking-coffee-office-break-businessman-drinking-coffee-office-break-103483068.jpg" alt="Team Member 2">
+          <h3>Jane Smith</h3>
+          <p>Marketing Director</p>
+        </div>
+        <div class="carousel-item">
+          <img src="https://thumbs.dreamstime.com/b/young-woman-office-worker-stand-indoors-career-business-work-formal-wear-present-confidence-77040767.jpg" alt="Team Member 3">
+          <h3>Kylie Brown</h3>
+          <p>Lead Developer</p>
+        </div>
+        <div class="carousel-item">
+          <img src="https://thumbs.dreamstime.com/b/happy-woman-standing-arms-crossed-20170380.jpg" alt="Team Member 4">
+          <h3>Emily Johnson</h3>
+          <p>Travel Consultant</p>
+        </div>
+        
+      </div>
+      <button class="carousel-button next">&#10095;</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Travel Website. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const prevButton = document
